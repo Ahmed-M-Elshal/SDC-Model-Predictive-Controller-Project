@@ -5,7 +5,7 @@
 
 #### A MPC optimizes the current controls while keeping future information in mind.
 
-![Video available here.](videos/sdc-mpc-run.mkv)
+![Video available here.](https://www.youtube.com/watch?v=wsNXZnSQFwQ)
 
 
 ## Overview
@@ -351,4 +351,5 @@ This is a student project with the primary goal being to learn and understand th
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./mpc`.
+4. shared memory: `LD_LIBRARY_PATH=/usr/local/lib && export LD_LIBRARY_PATH`
+5. Run it: `./mpc`.
