@@ -1,7 +1,7 @@
 # Model predictive control (MPC)
 
 
-![Example from simulator](images/car.png)
+![Example from simulator](MPC.png)
 
 #### A MPC optimizes the current controls while keeping future information in mind.
 
