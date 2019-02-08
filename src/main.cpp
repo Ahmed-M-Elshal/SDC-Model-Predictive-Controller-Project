@@ -147,8 +147,14 @@ int main() {
           psi = - v * steer_value / Lf * latency ;
           cout << "psi transformed" << psi << endl ;
 
-          double cte  = polyeval(coeffs, px) ;
-          double epsi = atan( coeffs[1] ) ;
+          // The cross track error is calculated by evaluating at polynomial at x, f(x)
+          // and subtracting y.
+          //double cte = polyeval(coeffs, px) - py;
+          double cte = polyeval(coeffs, 0);
+
+          // Due to the sign starting at 0, the orientation error is -f'(x).
+          // derivative of coeffs[0] + coeffs[1] * x -> coeffs[1]
+          double epsi = -atan(coeffs[1]);
 
           state << px, 0, psi, v, cte, epsi ;
           cout << "state " << psi << endl ;

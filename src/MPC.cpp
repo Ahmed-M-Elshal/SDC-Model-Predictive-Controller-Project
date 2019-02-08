@@ -136,11 +136,13 @@ class FG_eval {
       // for 3rd degree polynomial
       AD<double> f_t0 = coeffs[0] + 
                         coeffs[1] * x_t0 + 
-                        coeffs[2] * x_t0 * x_t0 ;
+                        coeffs[2] * x_t0 * x_t0 +
+                        coeffs[3] * x_t0 * x_t0 * x_t0 ;
       
       // rate of cahnge of f0
       AD<double> f_t0_rate_of_change = coeffs[1] +
-                                       coeffs[2] * x_t0 * x_t0 ;       
+                                       2* coeffs[2] * x_t0 +
+				       3* coeffs[3] * x_t0 * x_t0;       
        
       AD<double> psides_t0 = CppAD::atan( f_t0_rate_of_change) ;
 
